@@ -47,9 +47,11 @@ const env = process.env.NODE_ENV || "development";
 
 mongoose
   .connect(
-    `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0-uwxgx.mongodb.net/${env === "development"
-        ? process.env.DEV_DATABASE
-        : process.env.DATABASE}?retryWrites=true&w=majority`,
+    `mongodb+srv://${process.env.MONGO_USER}:${
+      process.env.MONGO_PASSWORD
+    }@cluster0-uwxgx.mongodb.net/${
+      env === "development" ? process.env.DEV_DATABASE : process.env.DATABASE
+    }?retryWrites=true&w=majority`,
     { useNewUrlParser: true, useUnifiedTopology: true }
   )
   .then(() =>
