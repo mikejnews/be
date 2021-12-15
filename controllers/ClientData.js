@@ -1,11 +1,10 @@
 const { validationResult } = require("express-validator");
 const ClientData = require("../models/ClientData");
-const {
-  sendMailToClient,
-  sentAccOpenFormPrincipal,
-} = require("../utils/emailUtils");
+const { sendMail } = require("../utils/emailUtils");
 const User = require("../models/User");
 const { APIError, PublicInfo } = require("../models/shared/messages");
+const generateAccOpenTemp = require("../emailTemplates/accountOpen");
+const generatePrincipalAccOpenTemp = require("../emailTemplates/principalEmailTemp");
 
 exports.createClientData = async (req, res, next) => {
   const { errors } = validationResult(req);
@@ -21,11 +20,17 @@ exports.createClientData = async (req, res, next) => {
     if (!clientDataReturned) next(APIError.errServerError());
 
     res.json(PublicInfo.infoCreated());
-    await sendMailToClient(
-      data.email,
-      `${req.body.mrmrs} ${req.body.fname} ${req.body.lname}`
-    );
-    await sentAccOpenFormPrincipal(data);
+    await sendMail({
+      to: data.email,
+      html: generateAccOpenTemp(
+        `${req.body.mrmrs} ${req.body.fname} ${req.body.lname}`
+      ),
+    });
+    await sendMail({
+      to: process.env.PRINCIPLE_EMAIL,
+      subject: "New client",
+      html: generatePrincipalAccOpenTemp(data),
+    });
   } catch (e) {
     console.log(e);
     next(APIError.errServerError());
