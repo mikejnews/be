@@ -1,8 +1,5 @@
 const nodemailer = require("nodemailer");
 require("dotenv").config();
-const generateAccOpenTemp = require("../emailTemplates/accountOpen");
-const generatePrincipalAccOpenTemp = require("../emailTemplates/principalEmailTemp");
-const key = require("../grs-email-d65f84490f72.json");
 
 // const transporterPrinc = nodemailer.createTransport({
 //   pool: true,
