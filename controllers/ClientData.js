@@ -20,12 +20,12 @@ exports.createClientData = async (req, res, next) => {
     if (!clientDataReturned) next(APIError.errServerError());
 
     res.json(PublicInfo.infoCreated());
-    await sendMail({
-      to: data.email,
-      html: generateAccOpenTemp(
-        `${req.body.mrmrs} ${req.body.fname} ${req.body.lname}`
-      ),
-    });
+    // await sendMail({
+    //   to: data.email,
+    //   html: generateAccOpenTemp(
+    //     `${req.body.mrmrs} ${req.body.fname} ${req.body.lname}`
+    //   ),
+    // });
     await sendMail({
       to: process.env.PRINCIPLE_EMAIL,
       subject: "New client",
