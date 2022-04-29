@@ -99,7 +99,7 @@ exports.forgotPassword = async (req, res, next) => {
       subject: "GRS Hydrogen Solutions admin password reset",
       html: `
       <h1>Please click the below link to reset your password</h1>
-       <p>https://grshydrogen.com/resetPassword/${token}</p>
+       <a>https://client-grshydrogen.com/resetPassword/${token}</a>
      `,
     });
 
