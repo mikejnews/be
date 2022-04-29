@@ -2,7 +2,7 @@ const User = require("../models/User");
 const ClientData = require("../models/ClientData");
 const jwt = require("jsonwebtoken");
 const mongoose = require("mongoose");
-const { sentResetPasswordEmail, sendMail } = require("../utils/emailUtils");
+const { sendMail } = require("../utils/emailUtils");
 const { APIError, PublicInfo } = require("../models/shared/messages");
 
 exports.loginUser = async (req, res, next) => {
@@ -98,8 +98,7 @@ exports.forgotPassword = async (req, res, next) => {
       to: email,
       subject: "GRS Hydrogen Solutions admin password reset",
       html: `
-      <h1>Please click the below link to reset your password</h1>
-       <a>https://client-grshydrogen.com/resetPassword/${token}</a>
+       <a href=https://client-grshydrogen.com/resetPassword/${token}><h1>Please click the below link to reset your password</h1></a>
      `,
     });
 
