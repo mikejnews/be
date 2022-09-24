@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style type="text/css">
+        body{
+    margin: 0px 75px 25px 75px;
+    font-family: 'Roboto', sans-serif;
+}
+.logo {
+    display: flex;
+    justify-content: center;
+}
+.top {
+    display: flex;
+    justify-content: space-between;
+}
+.table {
+    display: flex;
+    justify-content: space-between;
+}
+h2 {
+    text-align: center;
+    margin-top: 90px;
+}
+.divider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.info td {
+    width: 600px;
+    font-weight: bold;
+}
+span {
+    font-weight: bold;
+}
+.footer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    margin-top: 50px;
+    font-size: 13px;
+}
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img src="logo.jpg" alt="Logo" width="150px">
+    </div>
+    <div class="top">
+        <div>
+            <p><span>Date.:</span> {{pDate}}</p>
+        </div>
+        <div>
+            <p><span>Client Ref. No.:</span> {{clinetId}}</p>
+        </div>
+    </div>
+    <div class="wrapper">
+
+    <div class="table">
+        <table>
+            <tr>
+                <td><span>GRS Hydrogen Solutions</span></td>
+            </tr>
+            <tr>
+                <td>Manulife Place, #500</td>
+            </tr>
+            <tr>
+                <td>707 - 5th Street SW,</td>
+            </tr>
+            <tr>
+                <td>Calgary AB</td>
+            </tr>
+            <tr>
+                <td>Canada T2P 0Y3</td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <td><span>{{name}}</span></td>
+            </tr>
+            <tr>
+                <td>{{strHouse}}</td>
+            </tr>
+            <tr>
+                <td>{{city}}, {{prov}}</td>
+            </tr>
+            <tr>
+                <td>{{country}}, {{arcode}}</td>
+            </tr>
+        </table>
+    </div>
+    <h2>Payment Instructions</h2>
+    <div class="divider">
+        <div style="width: 100vh; border-bottom: 3px solid rgb(92, 184, 228)"></div>
+        <img src="logo.jpg" alt="Logo" width="50px">
+        <div style="width: 100vh; border-bottom: 3px solid rgb(92, 184, 228)"></div>
+    </div>
+<div>
+    <br>
+    <table class="table info">
+        <tr>
+            <td>Account Name:</td>
+            <td>GRS Hydrogen Solutions Inc.</td>
+        </tr>
+        <tr>
+            <td>Account No:</td>
+            <td>100 128 8</td>
+        </tr>
+        <tr>
+            <td>Transit No:</td>
+            <td>00394</td>
+        </tr>
+        <tr>
+            <td>Institution Number:</td>
+            <td>003</td>
+        </tr>
+        <tr>
+            <td>SWIFT Code:</td>
+            <td>ROYCCAT2</td>
+        </tr>
+        <tr>
+            <td>Bank Name:</td>
+            <td>Royal Bank of Canada</td>
+        </tr>
+        <tr>
+            <td>Address:</td>
+            <td>3715-47Ave Unit 200 Sylvan Lake AB T4S 0C8</td>
+        </tr>
+        <tr>
+            <td>Currency</td>
+            <td>{{currency}}</td>
+        </tr>
+    </table>
+    <br>
+</div>
+
+<div>
+    
+</div>
+
+    <div class="divider">
+        <div style="width: 100vh; border-bottom: 3px solid rgb(92, 184, 228)"></div>
+        <img src="logo.jpg" alt="Logo" width="50px">
+        <div style="width: 100vh; border-bottom: 3px solid rgb(92, 184, 228)"></div>
+    </div>
+
+    <div>
+        <p></p>
+        <p><span>Note:</span><br>When facilitating payment, quote your client reference number in the reason for the payment or in the reference area. If paying by check, include your client reference number on the memo line. This allows us to trace your payment more efficiently.</p>
+    </div>
+</div>
+<div>
+    
+<div class="footer">
+    <div style="width: 100%; border-bottom: 1px solid rgb(115, 119, 123)"></div>
+<p>GRS Hydrogen Solutions Inc. - Manulife Place, #500, 707 – 5th Street SW, Calgary AB, Canada T2P 0Y3<br>1</p>
+</div>
+</div>
+</body>
+</html>
