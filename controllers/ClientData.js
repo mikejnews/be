@@ -3,7 +3,6 @@ const ClientData = require("../models/ClientData");
 const { sendMail } = require("../utils/emailUtils");
 const User = require("../models/User");
 const { APIError, PublicInfo } = require("../models/shared/messages");
-const generateAccOpenTemp = require("../emailTemplates/accountOpen");
 const generatePrincipalAccOpenTemp = require("../emailTemplates/principalEmailTemp");
 
 exports.createClientData = async (req, res, next) => {
