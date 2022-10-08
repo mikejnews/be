@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Invoice</title>
+      <style type="text/css">
+         body {
+         margin: 0;
+         font-family: Arial, Helvetica, sans-serif;
+         width: 100%;
+         }
+         .flex {
+            display: flex;
+            justify-content: flex-end;
+         }
+         #graphic {
+         width: 100%;
+         position: absolute;
+         }
+         .top {
+         display: flex;
+         justify-content: space-evenly;
+         }
+         .img {
+         width: 200px;
+         margin-top: auto;
+         margin-left: 50px;
+         }
+         .reference {
+         width: 600px;
+         display: flex;
+         margin-top: 50px;
+         height: 50px;
+         }
+         .ref {
+         margin-left: 180px;
+         font-size: 20px;
+         position: relative;
+         margin-top: 50px;
+         margin-right: 30px;
+         }
+         .t-one {
+         margin-left: 50px;
+         font-size: 15px;
+         }
+         a {
+         color: #1155cc;
+         }
+         .t-one td {
+         width: 300px;
+         }
+         .t-one th {
+         font-weight: bold;
+         }
+         .contacts {
+         font-size: 12px;
+         }
+         th {
+         text-align: left;
+         }
+         .main {
+         display: flex;
+         justify-content: space-between;
+         }
+         .t-two th {
+         font-size: 15px;
+         height: 20px;
+         } 
+         .t-two td {
+         height: 15px;
+         font-size: 12px;
+         }
+         .short {
+         width: 260px;
+         }
+         .border-top {
+         border-top: 1px solid #1e73be;
+         }
+         .t-three, .t-four{
+         width: 100%;
+         border-bottom: 1px solid #1e73be;
+         }
+         .t-three th {
+         color: #bc7400;
+         font-size: 17px;
+         font-weight: bold;
+         width: 260px;
+         vertical-align: center;
+         height: 20px;
+         }
+         .t-three .first, .t-four .first, .t-five .first{
+         width: 32.5%;
+         }
+         .t-three .last, .t-four .last{
+         width: 17.5%;
+         }
+         .t-four td {
+         height: 27px;
+         width: 25%;
+         font-size: 15px;
+         }
+         .t-five, .t-six {
+         width: 100%;
+         }
+         .t-five td{
+         font-size: 15px;
+         height: 20px;
+         width: 25%; 
+         }
+         .t-six td {
+         font-size: 15px;
+         height: 40px;
+         width: 25%;  
+         }
+         .t-six .first{
+         width: 32.5%;
+         }
+         .t-six .last, .t-five .last{
+         width: 17.5%
+         }
+         .right {
+         text-align: right;
+         }
+         .border {
+         border-top: 1px solid #1e73be;
+         }
+         .t-seven {
+         margin-top: 5px;
+         width: 100%;
+         }
+         .t-seven .last {
+         width: 17.5%;
+         }
+         .t-seven td {
+         font-size: 15px;
+         height: 30px;
+         width: 25%; 
+         }
+         .t-seven .first{
+         width: 32.5%;
+         } 
+         .t-eight {
+         width: 43%;
+         margin-left: auto;
+         font-size: 15px;
+         height: 50px;
+         border-top: 1px solid #1e73be;
+         }
+         .t-eight td {
+         width: 220px;
+         vertical-align: bottom;
+         }
+         .t-eight .last{
+         width: 41.5%;
+         }
+         .t-nine td {
+         font-size: 17px;
+         }
+         .italic {
+         width: 57%;
+         font-style: italic;
+         margin-top: 40px;
+         margin-bottom: 50px;
+         font-size: 12px;
+         }
+         .svg {
+         margin-top: auto;
+         }
+         .wrapper {
+         margin: 0px 65px 0px 65px;
+         }
+      </style>
+   </head>
+   <body>
+      <div class="flex">
+         <img id="graphic" src="top-graphic.svg" alt="top-graphic">
+         <p class="ref">Client Reference: {{clinetId}}</p>
+      </div>
+      <div class="top">
+         <div class="img">
+            <img src="logo.jpg" alt="logo" width="120px" height="120px">
+         </div>
+         <div class="reference">
+                  <table class="t-one">
+                     <tr>
+                        <th>Phone</th>
+                        <th>Web</th>
+                     </tr>
+                     <tr class="contacts">
+                        <td>+1 855-915-3192</td>
+                        <td>accounts@grs-hydrogen.com</td>
+                     </tr>
+                     <tr class="contacts">
+                        <td></td>
+                        <td><a href="#">www.grshydrogen.com</a></td>
+                     </tr>
+                  </table>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="wrapper">
+         <hr>
+         <br>
+         <div class="main">
+            <table class="t-two">
+               <tr>
+                  <th>Issued by</td>
+               </tr>
+               <tr>
+                  <td class="border-top"></td>
+               </tr>
+               <tr>
+                  <td>GRS Hydrogen Solution Inc.</td>
+               </tr>
+               <tr>
+                  <td>Manulife Place, #500, 707 –</td>
+               </tr>
+               <tr>
+                  <td>5th Street SW</td>
+               </tr>
+               <tr>
+                  <td>Calgary AB</td>
+               </tr>
+               <tr>
+                  <td>Canada T2P 0Y3</td>
+               </tr>
+            </table>
+            <table class="t-two">
+               <tr>
+                  <th>Name of Shareholder</th>
+               </tr>
+               <tr>
+                  <td class="border-top"></td>
+               </tr>
+               <tr>
+                  <td>{{name}}</td>
+               </tr>
+               <tr>
+                  <td>{{strHouse}}</td>
+               </tr>
+               <tr>
+                  <td>{{city}}, {{prov}}</td>
+               </tr>
+               <tr>
+                  <td>{{country}}, {{arcode}}</td>
+               </tr>
+            </table>
+            <table class="t-two short">
+               <tr>
+                  <th>Invoice Details</th>
+               </tr>
+               <tr>
+                  <td class="border-top"></td>
+               </tr>
+               <tr>
+                  <td>Invoice No:</td>
+                  <td>{{invNo}}</td>
+               </tr>
+               <tr>
+                  <td>Purchase Date:</td>
+                  <td>{{pDate}}</td>
+               </tr>
+               <tr>
+                  <td>Due Date:</td>
+                  <td>{{dDate}}</td>
+               </tr>
+               <tr>
+                  <td>Total Due:</td>
+                  <td>{{totalDue}} CAD</td>
+               </tr>
+            </table>
+         </div>
+         <br>
+         <table class="t-three">
+            <tr>
+               <th class="first">Item Description</td>
+               <th>Unit Price</td>
+               <th>Quantity</td>
+               <th class="last">Total</td>
+         </table>
+         <div>
+            <table class="t-four">
+               <tr>
+                  <td class="first">Common A Class Shares</td>
+                  <td>{{uPrice}}{{currency}}</td>
+                  <td>{{quant}}</td>
+                  <td class="last">{{total}} CAD</td>
+               </tr>
+            </table>
+         </div>
+         <div>
+            <table class="t-five">
+               <tr>
+                  <td class="first">Security Registration Fee</td>
+                  <td>{{uPrice}}</td>
+                  <td>{{quant}}</td>
+                  <td class="last">{{totalFees}}</td>
+               </tr>
+            </table>
+         </div>
+         <table class="t-six">
+            <tr>
+               <td class="first"></td>
+               <td></td>
+               <td>Total Due:</td>
+               <td class="last">{{totalDue}} CAD</td>
+            </tr>
+         </table>
+         <table class="t-seven">
+            <tr>
+               <td class="first"></td>
+               <td></td>
+               <td></td>
+               <td class="last"></td>
+            </tr>
+            <tr>
+               <td class="first"></td>
+               <td></td>
+               <td>Total Shares:</td>
+               <td class="right last">{{totalSharesQuant}}</td>
+            </tr>
+            <tr>
+               <td class="first"></td>
+               <td></td>
+               <td>Total Value:</td>
+               <td class="last right">{{totalSharesVal}} CAD</td>
+            </tr>
+         </table>
+         <table class="t-eight">
+            <tr>
+               <td>Total Due:</td>
+               <td class="last right">{{totalDue}} CAD</td>
+            </tr>
+         </table>
+         <div>
+            <br>
+            <table class="t-nine">
+               <tr>
+                  <td>Payment Instructions</td>
+               </tr>
+               <tr>
+                  <td class="border"></td>
+               </tr>
+            </table>
+            <br>
+            <table class="t-two">
+               <tr>
+                  <td width="40%">Account No:</td>
+                  <td>100 128 8</td>
+               </tr>
+               <tr>
+                  <td>Account Name:</td>
+                  <td>GRS Hydrogen Solution Inc.</td>
+               </tr>
+               <tr>
+                  <td>SWIFT Code:</td>
+                  <td>ROYCCAT2</td>
+               </tr>
+               <tr>
+                  <td>Bank Name:</td>
+                  <td>Royal Bank of Canada</td>
+               </tr>
+               <tr>
+                  <td>Back Address:</td>
+                  <td>Sylvan Lake Branch</td>
+               </tr>
+               <tr>
+                  <td></td>
+                  <td>3715-47Ave Unit 200</td>
+               </tr>
+               <tr>
+                  <td></td>
+                  <td>Sylvan Lake AB T4S 0C8</td>
+               </tr>
+               <tr>
+                  <td>Currency</td>
+                  <td>CAD</td>
+               </tr>
+            </table>
+         </div>
+         <div class="italic">
+            <p>When facilitating payment please use your unique client reference number,
+               in the reason for payment or reference number area.
+               <br>This way we may track your payment more efficiently.
+            </p>
+         </div>
+      </div>
+      </div>
+      </div>
+      <div class="svg"><img src="bottom-graphic.svg" alt="bottom" id="graphic"></div>
+   </body>
+</html>
