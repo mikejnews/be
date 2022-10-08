@@ -5,15 +5,19 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Invoice</title>
-      <!-- <link rel="stylesheet" href="stylein.css"> -->
       <style type="text/css">
          body {
          margin: 0;
          font-family: Arial, Helvetica, sans-serif;
          width: 100%;
          }
+         .flex {
+            display: flex;
+            justify-content: flex-end;
+         }
          #graphic {
          width: 100%;
+         position: absolute;
          }
          .top {
          display: flex;
@@ -27,11 +31,15 @@
          .reference {
          width: 600px;
          display: flex;
+         margin-top: 50px;
+         height: 50px;
          }
          .ref {
          margin-left: 180px;
-         font-size: 23px;
-         margin-top: auto;
+         font-size: 20px;
+         position: relative;
+         margin-top: 50px;
+         margin-right: 30px;
          }
          .t-one {
          margin-left: 50px;
@@ -58,7 +66,7 @@
          }
          .t-two th {
          font-size: 15px;
-         height: 40px;
+         height: 20px;
          } 
          .t-two td {
          height: 15px;
@@ -80,7 +88,7 @@
          font-weight: bold;
          width: 260px;
          vertical-align: center;
-         height: 40px;
+         height: 20px;
          }
          .t-three .first, .t-four .first, .t-five .first{
          width: 32.5%;
@@ -153,12 +161,12 @@
          .italic {
          width: 57%;
          font-style: italic;
+         margin-top: 40px;
          margin-bottom: 50px;
          font-size: 12px;
          }
-         .bottom {
-         width: 100%;
-         margin-top: 0;
+         .svg {
+         margin-top: auto;
          }
          .wrapper {
          margin: 0px 65px 0px 65px;
@@ -166,15 +174,15 @@
       </style>
    </head>
    <body>
-      <img id="graphic" src="top-graphic.svg" alt="top-graphic">
+      <div class="flex">
+         <img id="graphic" src="top-graphic.svg" alt="top-graphic">
+         <p class="ref">Client Reference: {{clinetId}}</p>
+      </div>
       <div class="top">
          <div class="img">
             <img src="logo.jpg" alt="logo" width="120px" height="120px">
          </div>
          <div class="reference">
-            <div>
-               <p class="ref">Client Reference: CGFF796032</p>
-               <div>
                   <table class="t-one">
                      <tr>
                         <th>Phone</th>
@@ -228,19 +236,16 @@
                   <td class="border-top"></td>
                </tr>
                <tr>
-                  <td>Claude Gagné</td>
+                  <td>{{name}}</td>
                </tr>
                <tr>
-                  <td>6029, prom. Vineyard,</td>
+                  <td>{{strHouse}}</td>
                </tr>
                <tr>
-                  <td></td>
+                  <td>{{city}}, {{prov}}</td>
                </tr>
                <tr>
-                  <td>Ottawa, ON</td>
-               </tr>
-               <tr>
-                  <td>Canada, K1C 2T7</td>
+                  <td>{{country}}, {{arcode}}</td>
                </tr>
             </table>
             <table class="t-two short">
@@ -252,23 +257,19 @@
                </tr>
                <tr>
                   <td>Invoice No:</td>
-                  <td>CGFF796032</td>
+                  <td>{{invNo}}</td>
                </tr>
                <tr>
                   <td>Purchase Date:</td>
-                  <td>09/22/2022</td>
-               </tr>
-               <tr>
-                  <td></td>
-                  <td></td>
+                  <td>{{pDate}}</td>
                </tr>
                <tr>
                   <td>Due Date:</td>
-                  <td>09/27/2022</td>
+                  <td>{{dDate}}</td>
                </tr>
                <tr>
                   <td>Total Due:</td>
-                  <td>$25,000 CAD</td>
+                  <td>{{totalDue}} CAD</td>
                </tr>
             </table>
          </div>
@@ -284,9 +285,9 @@
             <table class="t-four">
                <tr>
                   <td class="first">Common A Class Shares</td>
-                  <td>$5.00 CAD</td>
-                  <td>5,000</td>
-                  <td class="last">$25,000 CAD</td>
+                  <td>{{uPrice}}{{currency}}</td>
+                  <td>{{quant}}</td>
+                  <td class="last">{{total}} CAD</td>
                </tr>
             </table>
          </div>
@@ -294,9 +295,9 @@
             <table class="t-five">
                <tr>
                   <td class="first">Security Registration Fee</td>
-                  <td>$250.00 CAD</td>
-                  <td>1</td>
-                  <td class="last">Waived</td>
+                  <td>{{uPrice}}</td>
+                  <td>{{quant}}</td>
+                  <td class="last">{{totalFees}}</td>
                </tr>
             </table>
          </div>
@@ -305,7 +306,7 @@
                <td class="first"></td>
                <td></td>
                <td>Total Due:</td>
-               <td class="last">$25,000 CAD</td>
+               <td class="last">{{totalDue}} CAD</td>
             </tr>
          </table>
          <table class="t-seven">
@@ -319,19 +320,19 @@
                <td class="first"></td>
                <td></td>
                <td>Total Shares:</td>
-               <td class="right last">5,000</td>
+               <td class="right last">{{totalSharesQuant}}</td>
             </tr>
             <tr>
                <td class="first"></td>
                <td></td>
                <td>Total Value:</td>
-               <td class="last right">$25,000 CAD</td>
+               <td class="last right">{{totalSharesVal}} CAD</td>
             </tr>
          </table>
          <table class="t-eight">
             <tr>
                <td>Total Due:</td>
-               <td class="last right">$25,000 CAD</td>
+               <td class="last right">{{totalDue}} CAD</td>
             </tr>
          </table>
          <div>
